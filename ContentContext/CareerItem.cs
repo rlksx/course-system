@@ -1,6 +1,6 @@
 namespace course_system.ContentContext
 {
-    public class CareerItem 
+    public class CareerItem : Base
     // classe item da carreira que organiza o cursos da carreira;
     {
         public int Order { get; set; } // ordem do curso;
@@ -15,8 +15,9 @@ namespace course_system.ContentContext
             this.Description = description;
             this.Course = course;
 
-            if (Course == null)
+            if (course == null)
                 throw new System.Exception("O curso não pode ser nulo!");
+                // um custo alto no processamento e a execução é parada.
         }
     }
 }

@@ -47,7 +47,6 @@ namespace course_system {
                 }
             }
 
-
             // artigos
             var articles = new List<Article>();
             // adicionando um artigos
