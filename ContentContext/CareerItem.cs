@@ -1,4 +1,5 @@
 using course_system.NotificationContext;
+using course_system.SharedContext;
 namespace course_system.ContentContext
 {
     public class CareerItem : Base

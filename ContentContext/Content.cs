@@ -1,3 +1,4 @@
+using course_system.SharedContext;
 namespace course_system.ContentContext
 {   
     // superclasse abstrata

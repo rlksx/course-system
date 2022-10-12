@@ -1,5 +1,4 @@
 using course_system.Enums;
-
 namespace course_system.ContentContext
 {
     public class Course : Content

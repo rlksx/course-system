@@ -1,5 +1,5 @@
 using course_system.NotificationContext;
-namespace course_system.ContentContext
+namespace course_system.SharedContext
 {
     public class Base : Notifiable
     {

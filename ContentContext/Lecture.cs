@@ -1,3 +1,4 @@
+using course_system.SharedContext;
 namespace course_system.ContentContext
 {
     public class Lecture : Base
@@ -7,4 +8,4 @@ namespace course_system.ContentContext
         public int DurationInMinutes { get; set; } // duração da auça;
         public Enums.EContentLevel Level { get; set; } // nivel da aula;
     }
-} 
+}  
