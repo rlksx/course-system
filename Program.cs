@@ -19,12 +19,12 @@ namespace course_system {
 
             // adicionando a lista de cursos;
             courses.Add(course01);
-            courses.Add(course02);
+            courses.Add(course02); 
             courses.Add(course03);
             
             // criando items da carreira e adicionand cursos á carreira
             var fundamentalsCsharp = new CareerItem(1, "Fundamentos C#", "0", course01); // curso da carreira 
-            var OOP = new CareerItem(2, "Programação Orientada a Objeto", "0", course02); // curso da carreira 
+            var OOP = new CareerItem(2, "Programação Orientada a Objeto", "0", null); // curso da carreira 
             var SQLSever = new CareerItem(3, "SQL Sever", "0", course03); // curso da carreira 
 
             // adicionando items da carreira back end, como titulo, descrição e cursos;
@@ -38,12 +38,18 @@ namespace course_system {
             // quantidade de cursos da carreira back end;
             Console.Write($"A carreira backend possuí {backend.TotalCourses} curso(s)!\n");
             
-            // ordem dos cursos
+            // imprimindo informações dos cursos
             foreach (var career in careers) {
+                // titulo da carreira
                 Console.WriteLine(career.Title);
                 foreach (var item in career.Items.OrderBy(x => x.Order) ) { // OrderBy e OrderByDeceding;
+                
                     // ordenando cursos ddas carreiras
-                    Console.WriteLine($"{item.Order} - {item.Title} - Nivel: {item.Course.Level}"); 
+                    Console.WriteLine($"{item.Order} - {item.Course?.Title} - Nivel: {item.Course?.Level}");
+
+                    // avisos/notificão
+                    foreach (var notification in item.Notifications)
+                        Console.WriteLine($"{notification.Property} - {notification.Message}");
                 }
             }
 
@@ -60,7 +66,7 @@ namespace course_system {
                 Console.WriteLine($"Identificador do artigo: {article.Id}");
                 Console.WriteLine($"Url do Artigo: {article.Url}" );
             }
-             
+
         }
     }
 }

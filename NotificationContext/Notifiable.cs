@@ -5,14 +5,16 @@ namespace course_system.NotificationContext
     {
         public List<Notification> Notifications { get; set; }
 
-        public void AddNotification(Notification notification)
-        {
-            Notifications.Add(notification);
-        }
+        // Iniciando lista;
+        public Notifiable() => Notifications = new List<Notification>();
 
-        public void AddRangeNotification(IEnumerable<Notification> notification)
-        {
-            Notifications.AddRange(notification);
-        }
+        // adicionar uma notificação;
+        public void AddNotification(Notification notification) => Notifications.Add(notification);
+
+        // adicionar varias notificações;
+        public void AddRangeNotification(IEnumerable<Notification> notification) => Notifications.AddRange(notification);
+
+        // verificando se há notificações;
+        public bool IsInvalid => Notifications.Any();
     }  
 }

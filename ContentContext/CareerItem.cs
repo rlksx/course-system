@@ -1,3 +1,4 @@
+using course_system.NotificationContext;
 namespace course_system.ContentContext
 {
     public class CareerItem : Base
@@ -15,9 +16,12 @@ namespace course_system.ContentContext
             this.Description = description;
             this.Course = course;
 
+            // if (course == null)
+            //     throw new System.Exception("O curso não pode ser nulo!");
+            //     // um custo alto no processamento e a execução é parada.
+
             if (course == null)
-                throw new System.Exception("O curso não pode ser nulo!");
-                // um custo alto no processamento e a execução é parada.
+                AddNotification( new Notification("course" + order, "Curso Invalido") );
         }
-    }
-}
+    } 
+} 
