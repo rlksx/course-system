@@ -1,4 +1,5 @@
 ﻿using course_system.ContentContext;
+using course_system.SubscriptionContext;
 namespace course_system {
 
     class Program 
@@ -66,6 +67,16 @@ namespace course_system {
                 Console.WriteLine($"Identificador do artigo: {article.Id}");
                 Console.WriteLine($"Url do Artigo: {article.Url}" );
             }
+
+            // assinaturas dos alunos e usuarios
+            var paypalsubscription = new PayPalSubscription();
+            var pagarmesubscription = new PagarMeSubscription();
+            
+            var student01 = new Student();
+            var student02 = new Student();
+
+            student01.CreateSubscription(paypalsubscription);
+            student02.CreateSubscription(pagarmesubscription);
 
         }
     }
